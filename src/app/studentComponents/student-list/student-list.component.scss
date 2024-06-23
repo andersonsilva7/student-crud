@@ -1,0 +1,51 @@
+.action-buttons {
+    text-align: center;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    justify-content: start;
+    gap: 2px;
+    }
+    .btn-custom-details {
+        background-color: #5bc0de;
+        color: #fff;
+        border: 1px solid #46b8da;
+        transition: background-color 0.3s ease;
+      
+        &:hover {
+          background-color: #31b0d5;
+        }
+      }
+      
+      .btn-custom-edit {
+        background-color: #f0ad4e;
+        color: #fff;
+        border: 1px solid #eea236;
+        transition: background-color 0.3s ease;
+      
+        &:hover {
+          background-color: #ec971f;
+        }
+      }
+      
+      .btn-custom-delete {
+        background-color: #d9534f;
+        color: #fff;
+        border: 1px solid #d43f3a;
+        transition: background-color 0.3s ease;
+      
+        &:hover {
+          background-color: #c9302c;
+        }
+      }
+      
+      .btn {
+        font-size: 16px;
+        text-align: center;
+        margin-top: 5px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+        padding: 10px 15px;
+      }
+      

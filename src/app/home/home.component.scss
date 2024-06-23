@@ -1,0 +1,34 @@
+/* src/app/home/home.component.scss */
+.container {
+  background-color: #f8f9fa;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  padding: 50px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h2 {
+  color: #3f51b5;
+  margin-bottom: 20px;
+}
+
+h3 {
+  color: #333;
+  margin-top: 30px;
+}
+
+p {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.main-button {
+  font-size: 16px;
+  text-align: center;
+  margin-top: 10px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 15px;
+}

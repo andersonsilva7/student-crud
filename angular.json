@@ -37,6 +37,8 @@
               }
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/rose-red.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": [],
@@ -100,6 +102,7 @@
               }
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/rose-red.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -107,5 +110,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "d29108ce-0823-4e19-bda6-e7c154b46d60"
   }
 }

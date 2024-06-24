@@ -8,8 +8,10 @@ import { HomeComponent } from './home/home.component';
 import { StudentListComponent } from './studentComponents/student-list/student-list.component';
 import { StudentFormComponent } from './studentComponents/student-form/student-form.component';
 import { StudentDetailsComponent } from './studentComponents/student-details/student-details.component';
-import { StudentService } from './studentService/student.service';  // Certifique-se de que este caminho está correto
-import { HttpClientModule } from '@angular/common/http';
+import { StudentService } from './studentService/student.service'; 
+import { HttpClientModule, provideHttpClient } from '@angular/common/http';
+import { withFetch } from '@angular/common/http'; // Import the withFetch method
+
 
 // Importando módulos do Angular Material
 import { MatTableModule } from '@angular/material/table';
@@ -18,8 +20,15 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { FormsModule } from '@angular/forms';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatDividerModule } from '@angular/material/divider';
+
+import { MatMenuModule } from '@angular/material/menu';
+import { LayoutModule } from '@angular/cdk/layout';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,13 +46,19 @@ import { MatDividerModule } from '@angular/material/divider';
     MatInputModule,  // Importando o módulo de input
     MatSnackBarModule,  // Importando o módulo de snack-bar
     HttpClientModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatIconModule,
     MatListModule,
     MatDividerModule,  
-    FormsModule
+    FormsModule,
+    MatMenuModule,
+    LayoutModule
   ],
   providers: [
     StudentService,
     provideClientHydration(),
+    provideHttpClient(withFetch()), // Use withFetch with provideHttpClient,
     provideAnimationsAsync()
   ],
   bootstrap: [AppComponent]

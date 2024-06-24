@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-student-details',
   templateUrl: './student-details.component.html',
-  styleUrl: './student-details.component.css'
+  styleUrl: './student-details.component.scss'
 })
 export class StudentDetailsComponent implements OnInit {
   student: any = {};
@@ -35,6 +35,6 @@ export class StudentDetailsComponent implements OnInit {
   }
 
   navigateToStudentList(): void {
-    this.router.navigate(['/list']);
+    this.router.navigate(['students']);
   }
 }

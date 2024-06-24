@@ -37,7 +37,7 @@ export class StudentListComponent implements OnInit {
   }
 
   editStudent(id: string): void {
-    this.router.navigate(['/edit', id]);
+    this.router.navigate(['/students/edit', id]);
   }
 
   deleteConfirmed() {
@@ -74,7 +74,7 @@ export class StudentListComponent implements OnInit {
   }
 
   viewStudentDetails(id: string): void {
-    this.router.navigate(['/details', id]);
+    this.router.navigate(['students/details/', id]);
   }
 
   goToHome(): void {

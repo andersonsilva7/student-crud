@@ -1,23 +1,26 @@
-<!-- src/app/app.component.html -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Gerenciador de Alunos</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+<mat-toolbar color="primary">
+  <button mat-icon-button (click)="sidenav.toggle()" class="menu-button">
+    <mat-icon>menu</mat-icon>
   </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/students">Lista de Alunos</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/students/add">Adicionar Aluno</a>
-      </li>
-    </ul>
-  </div>
-</nav>
-<div class="container mt-4">
-  <router-outlet></router-outlet>
-</div>
+  <span>Gerenciador de Alunos</span>
+  <span class="spacer"></span>
+  <ng-container *ngIf="(isHandset$ | async) === false">
+    <a mat-button routerLink="/">Home</a>
+    <a mat-button routerLink="/students">Lista de Alunos</a>
+    <a mat-button routerLink="/students/add">Adicionar Aluno</a>
+  </ng-container>
+</mat-toolbar>
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #sidenav mode="over" [fixedInViewport]="true" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" class="sidenav">
+    <mat-nav-list>
+      <a mat-list-item routerLink="/" (click)="sidenav.close()">Home</a>
+      <a mat-list-item routerLink="/students" (click)="sidenav.close()">Lista de Alunos</a>
+      <a mat-list-item routerLink="/students/add" (click)="sidenav.close()">Adicionar Aluno</a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

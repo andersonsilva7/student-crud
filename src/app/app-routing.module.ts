@@ -9,9 +9,10 @@ import { StudentDetailsComponent } from './studentComponents/student-details/stu
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'students', component: StudentListComponent },
-  { path: 'students/add', component: StudentFormComponent },
+  { path: 'add', component: StudentFormComponent },
   { path: 'students/edit/:id', component: StudentFormComponent },
-  { path: 'students/details/:id', component: StudentDetailsComponent }
+  { path: 'students/details/:id', component: StudentDetailsComponent },
+  { path: '**', redirectTo: '' } 
 ];
 
 @NgModule({

@@ -1,4 +1,3 @@
-
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { StudentService } from '../../studentService/student.service';
@@ -6,12 +5,12 @@ import { StudentService } from '../../studentService/student.service';
 @Component({
   selector: 'app-student-form',
   templateUrl: './student-form.component.html',
-  styleUrl: './student-form.component.scss'
+  styleUrls: ['./student-form.component.scss']
 })
 export class StudentFormComponent implements OnInit {
   student: any = {};
   isEditMode = false;
-  nomeInvalid = false;
+  fieldInvalid = false;
 
   constructor(
     private router: Router,
@@ -36,20 +35,20 @@ export class StudentFormComponent implements OnInit {
         !this.student.email || this.student.email.trim() === '' ||
         !this.student.phone || this.student.phone.trim() === '' ||
         !this.student.course || this.student.course.trim() === '' ||
-        !this.student.age || this.student.age.trim() === '') {
-      this.nomeInvalid = true;
+        !this.student.age || this.student.age <= 0) {
+      this.fieldInvalid = true;
       return;
     }
 
     if (this.isEditMode) {
       this.studentService.updateStudent(this.student).subscribe(() => {
-        this.router.navigate(['/list']);
+        this.router.navigate(['/students']);
       }, error => {
         console.error('Error updating student:', error);
       });
     } else {
       this.studentService.addStudent(this.student).subscribe(() => {
-        this.router.navigate(['/list']);
+        this.router.navigate(['/students']);
       }, error => {
         console.error('Error adding student:', error);
       });
@@ -57,6 +56,6 @@ export class StudentFormComponent implements OnInit {
   }
 
   cancel(): void {
-    this.router.navigate(['/list']);
+    this.router.navigate(['/students']);
   }
 }

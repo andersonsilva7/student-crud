@@ -1,26 +1,24 @@
 <mat-toolbar color="primary">
-  <button mat-icon-button (click)="sidenav.toggle()" class="menu-button">
-    <mat-icon>menu</mat-icon>
-  </button>
   <span>Gerenciador de Alunos</span>
   <span class="spacer"></span>
-  <ng-container *ngIf="(isHandset$ | async) === false">
-    <a mat-button routerLink="/">Home</a>
-    <a mat-button routerLink="/students">Lista de Alunos</a>
-    <a mat-button routerLink="/students/add">Adicionar Aluno</a>
+  <ng-container *ngIf="(isHandset$ | async) as isHandset">
+    <ng-container *ngIf="!isHandset">
+      <a mat-button routerLink="/">Home</a>
+      <a mat-button routerLink="/students">Lista de Alunos</a>
+      <a mat-button routerLink="/students/add">Adicionar Aluno</a>
+    </ng-container>
+    <ng-container *ngIf="isHandset">
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="/">Home</button>
+        <button mat-menu-item routerLink="/students">Lista de Alunos</button>
+        <button mat-menu-item routerLink="/students/add">Adicionar Aluno</button>
+      </mat-menu>
+    </ng-container>
   </ng-container>
 </mat-toolbar>
 
-<mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #sidenav mode="over" [fixedInViewport]="true" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" class="sidenav">
-    <mat-nav-list>
-      <a mat-list-item routerLink="/" (click)="sidenav.close()">Home</a>
-      <a mat-list-item routerLink="/students" (click)="sidenav.close()">Lista de Alunos</a>
-      <a mat-list-item routerLink="/students/add" (click)="sidenav.close()">Adicionar Aluno</a>
-    </mat-nav-list>
-  </mat-sidenav>
-
-  <mat-sidenav-content>
-    <router-outlet></router-outlet>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+<router-outlet></router-outlet>
+ 

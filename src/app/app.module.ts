@@ -11,10 +11,9 @@ import { StudentFormComponent } from './studentComponents/student-form/student-f
 import { StudentDetailsComponent } from './studentComponents/student-details/student-details.component';
 import { StudentService } from './studentService/student.service'; 
 import { HttpClientModule, provideHttpClient } from '@angular/common/http';
-import { withFetch } from '@angular/common/http'; // Import the withFetch method
+import { withFetch } from '@angular/common/http';  
 
-
-// Importando módulos do Angular Material
+ 
 import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -41,11 +40,11 @@ import { LayoutModule } from '@angular/cdk/layout';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MatTableModule,  // Importando o módulo da tabela
-    MatButtonModule,  // Importando o módulo dos botões
-    MatDialogModule,  // Importando o módulo de diálogo
-    MatInputModule,  // Importando o módulo de input
-    MatSnackBarModule,  // Importando o módulo de snack-bar
+    MatTableModule,  
+    MatButtonModule, 
+    MatDialogModule,  
+    MatInputModule,  
+    MatSnackBarModule,  
     HttpClientModule,
     MatToolbarModule,
     MatSidenavModule,
@@ -59,7 +58,7 @@ import { LayoutModule } from '@angular/cdk/layout';
   providers: [
     StudentService,
     provideClientHydration(),
-    provideHttpClient(withFetch()), // Use withFetch with provideHttpClient,
+    provideHttpClient(withFetch()), 
     provideAnimationsAsync()
   ],
   bootstrap: [AppComponent]

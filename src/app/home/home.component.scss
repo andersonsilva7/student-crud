@@ -1,3 +1,50 @@
+.container {
+  background-color: #000; 
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;  
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  color: #fff;  
+}
+
+h2 {
+  text-align: center; 
+}
+
+.intro-text {
+  font-size: 18px;
+  margin-bottom: 10px;  
+  text-align: center;  
+}
+
+.section-title {
+  font-size: 22px;
+  margin-top: 20px; 
+  text-align: center; 
+}
+
+.system-description {
+  margin-top: 10px; 
+  line-height: 1.4; 
+  text-align: justify;
+}
+
+.system-description p {
+  margin-bottom: 10px;
+  text-align: justify; 
+  text-align: center;
+}
+
+.system-description ul.centered-list {
+  list-style-type: none; 
+  padding-left: 0; 
+  text-align: center; 
+}
+
+.system-description li {
+  margin-bottom: 5px; 
+}
+
 .main-button {
   font-size: 16px;
   text-align: center;
@@ -5,15 +52,18 @@
   border-radius: 25px;
   cursor: pointer;
   font-weight: bold;
-  padding: 15px;
+  padding: 10px;
+  background-color: #6a0dad; 
+  border: none;
+  color: #fff; 
 }
-/*
-.container {
-  background-color: #f8f9fa;
-  border: 2px solid #ccc;
-  border-radius: 8px;
-  padding: 50px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  justify-content: space-evenly;
+
+.main-button:hover {
+  background-color: #5b0cac; 
 }
-*/
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px; 
+}

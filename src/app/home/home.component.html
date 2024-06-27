@@ -1,16 +1,19 @@
 <div class="container mt-4">
   <h2>Sistema Gerenciador de Alunos</h2>
-  <p>Página inicial do sistema.</p>
-  <h3>Descrição do Sistema</h3>    
-  <p>
-    Esse projeto tem o objetivo de manipular uma lista de estudantes. <br />
-    É um simples sistema CRUD (CREATE, READ, UPDATE and DELETE), utilizando um JSON Server para armazenar os dados.
-    Aqui, conseguimos realizar as seguintes operações: <br />
-    <br />
-    - Adicionar um aluno. <br >
-    - Exibir um aluno. <br >
-    - Editar um aluno. <br >
-    - Excluir um aluno. <br >
-  </p>
-  <button class="btn btn-primary main-button" (click)="navigateToStudentList()">Clique aqui para ver a lista de alunos!</button>
+  <p class="intro-text">Página inicial do sistema.</p>
+  <h3 class="section-title">Descrição do Sistema</h3>
+  <div class="system-description">
+    <p>Esse projeto tem o objetivo de manipular uma lista de estudantes.</p>
+    <p>É um simples sistema CRUD (CREATE, READ, UPDATE and DELETE), utilizando um JSON Server para armazenar os dados.</p>
+    <p>Aqui, conseguimos realizar as seguintes operações:</p>
+    <ul class="centered-list">
+      <li>Adicionar um aluno.</li>
+      <li>Exibir um aluno.</li>
+      <li>Editar um aluno.</li>
+      <li>Excluir um aluno.</li>
+    </ul>
+  </div>
+  <div class="button-container">
+    <button class="btn btn-primary main-button" (click)="navigateToStudentList()">Lista de Alunos</button>
+  </div>
 </div>
